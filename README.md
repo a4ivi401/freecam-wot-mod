@@ -1,6 +1,6 @@
 # f1nder freecam
 
-Код мода f1nder freecam для World of Tanks / Mir Tankov.
+Код мода f1nder freecam 1.0.0 для World of Tanks / Mir Tankov.
 
 ## Что лежит в репозитории
 
@@ -18,21 +18,19 @@
 Windows:
 
 ```bat
-build.bat 2.11
+build.bat 1.0.0
 ```
 
 Linux / GitHub Actions:
 
 ```bash
-bash build.sh 2.11
+bash build.sh 1.0.0
 ```
 
 Если версия не передана, `build.sh` пытается взять её из `meta.xml`.
 
 ## Автосборка на GitHub
 
-Workflow запускается при пуше тега `v*`, например `v2.11`.
-После сборки создаётся релиз с файлом `.mtmod`.
 Workflow запускается при пуше любого тега, например `1.0.0`.
 После сборки создаётся релиз с файлом `.mtmod`.
 
