@@ -1,0 +1,41 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 2.7
+        uses: LizardByte/setup-python-action@master
+        with:
+          python-version: '2.7'
+
+      - name: Build package
+        run: bash build.sh "${GITHUB_REF_NAME#v}"
+        shell: bash
+
+      - name: Resolve package name
+        id: package
+        shell: bash
+        run: |
+          MTMOD=$(ls *.mtmod | head -n 1)
+          if [ -z "$MTMOD" ]; then
+            echo "No .mtmod file found." >&2
+            exit 1
+          fi
+          echo "name=$MTMOD" >> "$GITHUB_OUTPUT"
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.package.outputs.name }}
+          token: ${{ github.token }}
