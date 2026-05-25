@@ -1,6 +1,6 @@
-# FreeCam
+# f1nder freecam
 
-Код мода FreeCam для World of Tanks / Mir Tankov.
+Код мода f1nder freecam для World of Tanks / Mir Tankov.
 
 ## Что лежит в репозитории
 

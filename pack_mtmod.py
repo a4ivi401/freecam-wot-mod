@@ -3,7 +3,7 @@ import py_compile
 import sys
 import zipfile
 
-MOD_NAME = 'goofy67_FreeCam'
+MOD_NAME = 'f1nder_FreeCam'
 ENTRYPOINT = 'mod_FreeCam_Hangar_and_Replays.py'
 ICON_PATH = 'res/gui/maps/icons/FreeCam.png'
 META_PATH = 'meta.xml'
